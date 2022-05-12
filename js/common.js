@@ -39,9 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const searchBtn = document.querySelector('.header__search button');
   const searchInput = document.querySelector('.header__search input');
+  const searchMobilForm = document.querySelector('.drop__search .search-wrap');
+  const searchMobilBtn = document.querySelector('.drop__search .search-link');
+
   searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     searchInput.classList.toggle('active');
+    
+  });
+  searchMobilBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    searchMobilForm.classList.toggle('active');
     
   });
   

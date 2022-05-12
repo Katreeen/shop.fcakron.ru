@@ -97,7 +97,8 @@ button:hover, button:focus, .btn:hover, .btn:focus{outline: none; text-decoratio
 
 
 .btn-search{background: url(../i/icon-loop.svg)no-repeat bottom; width: 27px; height: 37px; padding: 0;} 
-
+.form-control{font-size: inherit; font-weight: inherit;}
+.form-control:hover, .form-control:focus{outline: none; box-shadow: none; border-color: #fff} 
 /* .btn-secondary{background: #fff; color: #B60003; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 0; padding: 20px 54px; border: 1px solid #B60003; height: 56px; font-size: 13px; font-weight: bold;}
 .btn-secondary:focus, .btn-secondary.focus{background: #fff; color: #B60003; border: 1px solid #B60003;}
 .btn-secondary:hover,.btn-secondary:focus:hover, .btn-secondary.focus:hover, .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus {background: #fff; color: #B60003; border: 1px solid #B60003;}
@@ -120,8 +121,7 @@ button:hover, button:focus, .btn:hover, .btn:focus{outline: none; text-decoratio
 .btn-link:hover,.btn-link:focus:hover, .btn-link.focus:hover {}
 .btn-link:hover:after{}
 
-.form-control{font-size: inherit; font-weight: inherit;}
-.form-control:hover, .form-control:focus{outline: none; box-shadow: none;} */
+
 
 
 /* checkbox */
@@ -183,7 +183,38 @@ input[type=radio]:checked + label:after {background: linear-gradient(93.81deg, #
         .drop__menu .nav-link{color: #fff; position: relative; padding: 0 0 1.5rem 0; text-transform: uppercase;}
         .drop__menu .nav-link:hover{color: #9E2931;}
    
+        .drop__menu{position:fixed; top:0; right:-100%; width: 100%;  overflow-x:hidden; z-index:110; transition:all 0.8s ease; opacity:0; }
+        .drop__menu.active {right:0; opacity:1;}
+          .drop__wrap{background: rgba(0, 0, 0, 0.8); padding-top: 40px; width:542px; height:100vh; position:relative; overflow:auto; margin: 0 0 0 auto; padding-right: 90px;  padding-left:90px;  padding-bottom: 70px;   display: flex; flex-direction: column; justify-content: space-between;}
+            .drop__top{max-width: 262px;}
+              .drop-top-row{display: flex; justify-content: flex-end; align-items: center; margin-bottom: 57px;}
+                .drop__logo{display: none;}
+                  .drop__logo img{width: 40px; height: 40px;}
+                .drop__search{display: none;}
+                  .drop__search .search-link{background: url(../i/icon-search.svg) no-repeat center; width: 25px; height: 26px; display: block;}
+                .drop__basket{display: none;}
+                  .drop__basket .basket-link{background: url(../i/icon-basket-white.svg) no-repeat center;}
+                .drop__login{display: none;}
+                  .drop__login .user{background: url(../i/icon-user-white.svg) no-repeat center;}
 
+                .navbar-close{padding: 0; border: none;}
+                  .icon-close{background: url(../i/icon-close.svg) no-repeat center; width: 32px; height: 32px; display: block;}
+
+
+
+
+          
+            .drop__bottom{}
+              .drop-row{display: flex; flex-wrap: wrap; margin-bottom: 35px;}
+              .social-link{margin-right: 45px;}
+              .social-link.-vk{background: url(../i/icon-vk.svg) no-repeat center; width: 24px; height: 15px; display: block;}
+              .social-link.-tg{background: url(../i/icon-tg.svg) no-repeat center; width: 24px; height: 22px; display: block;}
+              .drop-logo{text-transform: uppercase; color:#fff; text-decoration: none; }
+              .drop-logo:before{content: ''; background: url(../i/icon-logo.svg) no-repeat center; display: inline-block; margin-right: 10px; height: 22px; width: 22px; vertical-align: middle;}
+          
+              .drop-copy{text-transform: uppercase; line-height: 1.5;}
+          
+          
 
 
 .header__search{width: 300px;} 
@@ -200,23 +231,6 @@ input[type=radio]:checked + label:after {background: linear-gradient(93.81deg, #
 .-h-row{justify-content: space-between; align-items: flex-end; width: 100%;}
 .navbar-toggler{display: block; padding: 0; border: none;}
   .icon-toggle{background: url(../i/icon-burger.svg) no-repeat center; width: 35px; height: 27px; display: block;}
-
-.drop__menu{position:fixed; top:0; right:-100%; width: 100%;  overflow-x:hidden; z-index:110; transition:all 0.8s ease; opacity:0; }
-.drop__menu.active {right:0; opacity:1;}
-	.drop__wrap{background: rgba(0, 0, 0, 0.8); padding-top: 40px; width:542px; height:100vh; position:relative; overflow:auto; margin: 0 0 0 auto; padding-right: 90px;  padding-left:90px;  padding-bottom: 70px;   display: flex; flex-direction: column; justify-content: space-between;}
-	.drop__top{display: flex; justify-content: flex-end; max-width: 262px;}
-    .navbar-close{padding: 0; border: none;}
-      .icon-close{background: url(../i/icon-close.svg) no-repeat center; width: 32px; height: 32px; display: block;}
-  
-  .drop__bottom{}
-    .drop-row{display: flex; flex-wrap: wrap; margin-bottom: 35px;}
-    .social-link{margin-right: 45px;}
-    .social-link.-vk{background: url(../i/icon-vk.svg) no-repeat center; width: 24px; height: 15px; display: block;}
-    .social-link.-tg{background: url(../i/icon-tg.svg) no-repeat center; width: 24px; height: 22px; display: block;}
-    .drop-logo{text-transform: uppercase; color:#fff; text-decoration: none; }
-    .drop-logo:before{content: ''; background: url(../i/icon-logo.svg) no-repeat center; display: inline-block; margin-right: 10px; height: 22px; width: 22px; vertical-align: middle;}
-
-    .drop-copy{text-transform: uppercase; line-height: 1.5;}
 
 
 
@@ -424,9 +438,18 @@ input[type=radio]:checked + label:after {background: linear-gradient(93.81deg, #
 }
 
 @media(max-width: 767px){
- 
+  .drop-top-row{justify-content: space-between;}
+  .drop__logo, .drop__search, .drop__basket, .drop__login{display: block;}
+  .header__search, .header__basket, .header__login{display: none;}
+  .search-wrap {display: none; position: absolute; top: 60px; left: 0; right: 0; padding: 10px 20px; z-index: 5; }
+  .search-wrap.active{display: block;}
+  .search-wrap .form-control{background: transparent; color:#fff}
+  .search-wrap .btn-search{position: absolute; top: 0; right: 5px; background: url(../i/icon-search.svg)no-repeat center;}
+  .drop-top-row{margin-bottom: 68px;}
 }
 
 @media(max-width: 575px){
-  .drop__wrap{max-width: 90%;}
+  .drop__wrap{max-width: 100%; padding: 17px 30px; background: rgba(0, 0, 0, 0.8);}
+  .icon-close{width: 26px; height: 26px;}
+  .drop__menu .nav-link{font-size: 16px;}
 }
