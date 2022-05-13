@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="libs/custom-select/custom-select.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body class="home">
@@ -17,19 +18,21 @@
     <header class="header">
       <div class="container">
         <div class="row g-0 -header-row">
-          <div class="col-2">
+          <div class="col-auto">
             <div class="header__logo">
               <a href="/" class="logotype"><img src="i/logo.svg" alt=""></a>
             </div>
           </div>
-          <div class="col-xl-6 col-md-8 col-sm-9 col-10">
+          <div class="col-auto">
             <div class="header__right">
               <div class="row -h-row">
                 <div class="col-auto">
                   <div class="header__search">
+                    <a href="#" class="search-link"></a>
                       <form class="form-inline search-form">
                         <input class="form-control" type="search" placeholder="Поиск..." aria-label="Search">
                         <button class="btn btn-search" type="submit"></button>
+                        <button class="btn btn-close" type="button"></button>
                       </form>
                   </div>
                 </div>
@@ -149,10 +152,11 @@
   <main class="main p-0">
   
   </main>
-  <footer class="footer">
+  <footer class="footer p-0">
   </footer>
   <script src="libs/bootstrap/bootstrap.min.js"></script>
   <script src="libs/swiper/swiper-bundle.min.js"></script>
+  <script src="libs/custom-select/custom-select.min.js"></script>
   <script src="js/common.js"></script>
 </body>
 </html>
