@@ -63,6 +63,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   customSelect('.custom-select');
 
+  const productThumbs = new Swiper('.product__thumbs', {
+    spaceBetween: 17,
+    slidesPerView: 5,
+    slideToClickedSlide: true,
+  });
+
+
+  const productSlider = new Swiper(".product__swiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 800,
+    mousewheel: true,
+    thumbs: {
+      swiper: productThumbs
+    }
+  });
+
+  
+
+  productSlider[0].controller.control = productThumbs;
+  productThumbs[0].controller.control = productSlider;
+
 
 
 
