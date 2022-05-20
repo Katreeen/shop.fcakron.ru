@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Карточка товара</title>
+  <title>Личный кабинет</title>
   <meta name="description" content="">
   <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="libs/custom-select/custom-select.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
-<body class="product-card">
+<body class="page">
   <div class="wrapper">
     <header class="header">
       <div class="container">
@@ -25,9 +25,6 @@
           <div class="col-auto">
             <div class="header__right">
               <div class="row -h-row">
-                <div class="col-auto -col-back">
-                  <a href="#" class="link-back">Вернуться назад</a>
-                </div>
                 <div class="col-auto">
                   <div class="header__search">
                     <a href="#" class="search-link"></a>
@@ -151,72 +148,21 @@
         </div>
     </header>
     <main class="main p-0">
-      <div class="product">
-        <div class="container-fluid">
-          <div class="row -product-row">
-            <div class="col-md-6 -col-product-img">
-                <div class="swiper product__swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide product-slide"><img src="i/proruct.png" alt=""></div>
-                    <div class="swiper-slide product-slide"><img src="i/proruct.png" alt=""></div>
-                    <div class="swiper-slide product-slide"><img src="i/proruct.png" alt=""></div>
-                  </div>
-                </div>
+      <div class="section profile">
+        <div class="container">
+          <div class="section__title">
+            <h1>Личный кабинет</h1>
+            <div class="profile-row">
+              <a href="#" class="profile-item -history">
+                <div class="profile-title -fs-25 -mrp-exb">История заказов</div>
+              </a>
+              <a href="#" class="profile-item -delivery">
+                <div class="profile-title -fs-25 -mrp-exb">Адреса доставки</div>
+              </a>
+              <a href="#" class="profile-item -settings">
+                <div class="profile-title -fs-25 -mrp-exb">Настройки профиля</div>
+              </a>
             </div>
-            <div class="col-md-6 col-lg-4 col-xl-3 offset-lg-1 -col-product-info">
-              <div class="product__info -mrp-m pb-6">
-                <div class="product__art -fs-12">Артикул 153 875</div>
-                <div class="product__ttl"><h1>Комплект шапка и перчатки</h1></div>
-                <div class="product__desc pt-4">Удобные перчатки и шапка сшиты из мягкого и очень теплого флиса с водоотталкивающими свойствами. </div>
-                <div class="product__option pt-4">
-                  <div class="row -option-row">
-                    <div class="col-auto">
-                      <div class="option__name pb-3">Шапка</div>
-                      <select name="size1" id="size1" class="option__select">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                      </select>
-                    </div>
-                    <div class="col-auto">
-                      <div class="option__name pb-3">Перчатки</div>
-                      <select name="size2" id="size2" class="option__select">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="product__bottom mt-5 pt-4">
-                  <div class="row -product-bottom-row">
-                    <div class="col-auto">
-                      <div class="product__price -fs-25 -mrp-exb">
-                        <span>1 090 ₽</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <div class="product__quantity">
-                          <button class="quantity-minus" type="button" value="-1">−</button>
-                          <input class="quantity-number" type="number" name="count" value="1">
-                          <button class="quantity-plus" type="button" value="+1">+</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product__btn pt-4">
-                    <button class="btn btn-card">В КОРЗИНУ</button>
-                  </div>
-                </div>
-                <div class="swiper product__thumbs mt-6">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide product-thumb"><img src="i/thumb1.png" alt=""></div>
-                    <div class="swiper-slide product-thumb"><img src="i/thumb2.png" alt=""></div>
-                    <div class="swiper-slide product-thumb"><img src="i/thumb3.png" alt=""></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
           </div>
         </div>
       </div>
