@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       drop.classList.add('active');
       document.body.classList.add('hide');
+      document.querySelector('.-open-menu').style.opacity = 0;
      
     });
   
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function closeMenu() {
       drop.classList.remove('active');
       document.body.classList.remove('hide');
+      document.querySelector('.-open-menu').style.opacity = 1;
     }
   
   const searchBtn = document.querySelector('.header__search .search-link');
@@ -62,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   customSelect('.custom-select');
+  try{
+  
 
   const productThumbs = new Swiper('.product__thumbs', {
     spaceBetween: 17,
@@ -85,10 +89,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   productSlider[0].controller.control = productThumbs;
   productThumbs[0].controller.control = productSlider;
+  }
+  catch{}
 
-
-
-
-
+  const slideCard = document.querySelectorAll('.product-slider .product-slide'),
+        slideThumb = document.querySelectorAll('.product-thumbs .product-thumb');
   
+  slideThumb.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => {
+
+      slideThumb.forEach(el => {
+        el.classList.remove('active');
+      });
+        
+      console.log(slideCard[i]);
+      slideCard[i].scrollIntoView({ behavior: "smooth" });
+      thumb.classList.add('active');
+    });
+  });
+
+  function scrollTrigger() {
+    slideCard.forEach((slide, i) => {
+      var posTop = slide.getBoundingClientRect().top;
+      if (posTop <= 0) {
+        slideThumb.forEach(el => {
+          el.classList.remove('active');
+        });
+        slideThumb[i].classList.add('active');
+      }
+     });
+  }
+  document.body.addEventListener("scroll", scrollTrigger);
 });
