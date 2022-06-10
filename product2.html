@@ -15,7 +15,7 @@
 <body class="product-card">
   <div class="wrapper">
     <header class="header">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row g-0 -header-row">
           <div class="col-auto">
             <div class="header__logo">
@@ -150,24 +150,31 @@
           </div>
         </div>
     </header>
-    <main class="main p-0">
+    <main class="main">
       <div class="product">
         <div class="container-fluid">
           <div class="row -product-row">
             <div class="col-md-6 -col-product-img">
                 <div class="product-slider">
-               
+                  
                     <div class="product-slide"><img src="i/proruct.png" alt="1"></div>
                     <div class="product-slide"><img src="i/proruct.png" alt="2"></div>
                     <div class="product-slide"><img src="i/proruct.png" alt="3"></div>
                   
                 </div>
+                <div class="product-slider swiper mobil-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide product-slide"><img src="i/proruct.png" alt="1"></div>
+                    <div class="swiper-slide product-slide"><img src="i/proruct.png" alt="2"></div>
+                    <div class="swiper-slide product-slide"><img src="i/proruct.png" alt="3"></div>
+                  </div>
+                </div>
             </div>
-            <div class="col-md-6 col-lg-4 col-xl-3 offset-lg-1 -col-product-info -sticky">
+            <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1 -col-product-info -sticky">
               <div class="product__info -mrp-m pb-6 card-sticky">
                 <div class="product__art -fs-12">Артикул 153 875</div>
                 <div class="product__ttl"><h1>Комплект шапка и перчатки</h1></div>
-                <div class="product__desc pt-4">Удобные перчатки и шапка сшиты из мягкого и очень теплого флиса с водоотталкивающими свойствами. </div>
+                <div class="product__desc">Удобные перчатки и шапка сшиты из мягкого и очень теплого флиса с водоотталкивающими свойствами. </div>
                 <div class="product__option pt-4">
                   <div class="row -option-row">
                     <div class="col-auto">
@@ -208,11 +215,16 @@
                   </div>
                 </div>
                 <div class="product-thumbs mt-6">
-         
                     <div class="product-thumb active"><img src="i/thumb1.png" alt=""></div>
                     <div class="product-thumb"><img src="i/thumb2.png" alt=""></div>
                     <div class="product-thumb"><img src="i/thumb3.png" alt=""></div>
-            
+                </div>
+                <div class="product-thumbs swiper mt-6 mobil-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide product-thumb"><img src="i/thumb1.png" alt=""></div>
+                    <div class="swiper-slide product-thumb"><img src="i/thumb2.png" alt=""></div>
+                    <div class="swiper-slide product-thumb"><img src="i/thumb3.png" alt=""></div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -253,6 +265,7 @@
       </div>
     </footer>
   </div>
+  <button class="btn btn-top"></button>
   <script src="libs/bootstrap/bootstrap.min.js"></script>
   <script src="libs/swiper/swiper-bundle.min.js"></script>
   <script src="libs/custom-select/custom-select.min.js"></script>

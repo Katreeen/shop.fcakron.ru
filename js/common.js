@@ -1,6 +1,15 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
+  const wrapper = document.querySelector('.wrapper');
+  const header = document.querySelector('.header');
+  const headerHeight = header.offsetHeight;
+  //main.style.paddingTop = `${headerHeight}px`;
+  let lastScrollTop = 0;
+  
+  
+  
+  
 
   const menuBtn = document.querySelector('.navbar-toggler'),
         drop = document.querySelector('.drop__menu'),
@@ -66,49 +75,56 @@ document.addEventListener("DOMContentLoaded", () => {
   customSelect('.custom-select');
   try{
   
+    if (window.innerWidth < 768) {
+      
 
-  const productThumbs = new Swiper('.product__thumbs', {
-    spaceBetween: 17,
-    slidesPerView: 5,
-    slideToClickedSlide: true,
-  });
+      const thumbs = document.querySelector('.product-thumbs.mobil-swiper');
+      document.querySelector('.-col-product-img').append(thumbs);
+
+      const productThumbs = new Swiper('.product-thumbs.mobil-swiper', {
+        spaceBetween: 17,
+        slidesPerView: 3,
+        slideToClickedSlide: true,
+      });
 
 
-  const productSlider = new Swiper(".product__swiper", {
-    direction: "vertical",
-    slidesPerView: 1,
-    spaceBetween: 0,
-    speed: 800,
-    mousewheel: true,
-    thumbs: {
-      swiper: productThumbs
+      const productSlider = new Swiper(".product-slider.mobil-swiper", {
+        spaceBetween: 0,
+        speed: 800,
+        mousewheel: true,
+        thumbs: {
+          swiper: productThumbs
+        }
+      });
+
+      productSlider[0].controller.control = productThumbs;
+      productThumbs[0].controller.control = productSlider;
+      
+      
     }
-  });
-
-  
-
-  productSlider[0].controller.control = productThumbs;
-  productThumbs[0].controller.control = productSlider;
   }
   catch{}
-
-  const slideCard = document.querySelectorAll('.product-slider .product-slide'),
-        slideThumb = document.querySelectorAll('.product-thumbs .product-thumb');
+  if (window.innerWidth >= 768) {
+    const slideCard = document.querySelectorAll('.product-slider .product-slide'),
+      slideThumb = document.querySelectorAll('.product-thumbs .product-thumb');
   
-  slideThumb.forEach((thumb, i) => {
-    thumb.addEventListener('click', () => {
+    slideThumb.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => {
 
-      slideThumb.forEach(el => {
-        el.classList.remove('active');
-      });
+        slideThumb.forEach(el => {
+          el.classList.remove('active');
+        });
         
-      console.log(slideCard[i]);
-      slideCard[i].scrollIntoView({ behavior: "smooth" });
-      thumb.classList.add('active');
+        console.log(slideCard[i]);
+        slideCard[i].scrollIntoView({ behavior: "smooth" });
+        thumb.classList.add('active');
+      });
     });
-  });
+  }
 
   function scrollTrigger() {
+    console.log('Scrolling...');
+    // функционал переключения слайдов в товаре
     slideCard.forEach((slide, i) => {
       var posTop = slide.getBoundingClientRect().top;
       if (posTop <= 0) {
@@ -117,7 +133,43 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         slideThumb[i].classList.add('active');
       }
-     });
+    });
+    
+      // фиксируем шапку при прокрутке
+    let scrollDistance = this.scrollTop;
+    
+    if (scrollDistance > 1) {
+      header.classList.add('header_fixed');
+      wrapper.style.paddingTop = `${headerHeight}px`;
+    } else {
+      header.classList.remove('header_fixed');
+      wrapper.style.paddingTop = '0';
+    }
+    lastScrollTop = scrollDistance;
+
+    // кнопка "вверх"
+    
+    
+    let coords = document.body.clientHeight/3;
+    console.log(scrollDistance);
+    if (scrollDistance > coords) {
+      goTopBtn.classList.add('-show');
+    }
+    if (scrollDistance < coords) {
+      goTopBtn.classList.remove('-show');
+    }
+    
   }
+  function backToTop() {
+      wrapper.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+  }
+  const goTopBtn = document.querySelector('.btn-top');
+
   document.body.addEventListener("scroll", scrollTrigger);
+  goTopBtn.addEventListener('click', backToTop);
+
+
 });
