@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   catch{}
   if (window.innerWidth >= 768) {
+    try{
     const slideCard = document.querySelectorAll('.product-slider .product-slide'),
       slideThumb = document.querySelectorAll('.product-thumbs .product-thumb');
   
@@ -121,21 +122,27 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+  catch{}
+  }
 
   function scrollTrigger() {
     console.log('Scrolling...');
     // функционал переключения слайдов в товаре
-    slideCard.forEach((slide, i) => {
-      var posTop = slide.getBoundingClientRect().top;
-      if (posTop <= 0) {
-        slideThumb.forEach(el => {
-          el.classList.remove('active');
-        });
-        slideThumb[i].classList.add('active');
-      }
-    });
+    try{
+      slideCard.forEach((slide, i) => {
+        var posTop = slide.getBoundingClientRect().top;
+        if (posTop <= 0) {
+          slideThumb.forEach(el => {
+            el.classList.remove('active');
+          });
+          slideThumb[i].classList.add('active');
+        }
+      });
+    }
+    catch{}
     
       // фиксируем шапку при прокрутке
+     
     let scrollDistance = this.scrollTop;
     
     if (scrollDistance > 1) {
@@ -151,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
     let coords = document.body.clientHeight/3;
-    console.log(scrollDistance);
+    //console.log(scrollDistance);
     if (scrollDistance > coords) {
       goTopBtn.classList.add('-show');
     }
