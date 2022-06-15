@@ -57,11 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
   searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     searchForm.classList.add('active');
+    searchBtn.style.opacity = 0;
     
   });
   searchFormClose.addEventListener('click', (e) => {
     e.preventDefault();
     searchForm.classList.remove('active');
+    searchBtn.style.opacity = 1;
     
   });
   searchMobilBtn.addEventListener('click', (e) => {
