@@ -41,8 +41,8 @@ html, body {font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 16p
   line-height: 1.4; max-width: 1920px; min-width: 375px; margin: 0 auto; position: relative; background: #fff; opacity: 1; overflow-x: hidden; height: 100%;}
 
 body.hide {overflow-y: hidden; }
-body.hide:before { z-index: 2; opacity: 1; }
-body:before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(197, 197, 197, 0); z-index: 100; transition: opacity 0.8s ease; opacity: 0; pointer-events: none; }
+/* body.hide:before { z-index: 2; opacity: 1; } */
+/* body:before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(197, 197, 197, 0); z-index: 100; transition: opacity 0.8s ease; opacity: 0; pointer-events: none; } */
 
 /* title */
 
@@ -172,7 +172,7 @@ input[type=radio].custom-radio + label:before{content: "";display: inline-block;
    
         .drop__menu{position:fixed; top:0; right:-100%; width: 100%;  overflow-x:hidden; z-index:110; transition:all 0.4s ease; opacity:0; height: 100%;}
         .drop__menu.active {right:0; opacity:1;}
-          .drop__wrap{background: rgba(0, 0, 0, 0.8); padding-top: 40px; width:542px; min-height:100vh; position:relative; overflow:auto; margin: 0 0 0 auto; padding-right: 90px;  padding-left:90px;  padding-bottom: 70px;   display: flex; flex-direction: column; justify-content: space-between;}
+          .drop__wrap{background: rgba(0, 0, 0, 0.8); padding-top: 40px; width:542px; min-height:100vh; position:relative; overflow:auto; margin: 0 0 0 auto; padding-right: 90px;  padding-left:90px;  padding-bottom: 70px;   display: flex; flex-direction: column; justify-content: space-between; height: 100%;}
             .drop__top{max-width: 300px;}
               .drop-top-row{display: flex; justify-content: flex-end; align-items: center; margin-bottom: 57px;}
                 .drop__logo{display: none;}
