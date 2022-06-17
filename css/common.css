@@ -38,9 +38,9 @@
 
 /* body */
 html, body {font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 16px; color: #111820;
-  line-height: 1.4; max-width: 1920px; min-width: 375px; margin: 0 auto; position: relative; background: #fff; opacity: 1; overflow-x: hidden; height: 100%;}
+  line-height: 1.4; max-width: 1920px; min-width: 375px; margin: 0 auto; position: relative; background: #fff; opacity: 1; overflow-x: hidden; height: 100%; width: 100%;}
 
-body.hide {overflow-y: hidden; }
+body.hide {overflow-y: hidden; position: fixed;}
 /* body.hide:before { z-index: 2; opacity: 1; } */
 /* body:before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(197, 197, 197, 0); z-index: 100; transition: opacity 0.8s ease; opacity: 0; pointer-events: none; } */
 
